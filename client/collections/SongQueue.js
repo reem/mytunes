@@ -5,7 +5,7 @@ var SongQueue = Songs.extend({
     this.on('end', function () {
       this.shift();
       if (this.length) {
-        this.trigger('newSong', this.at(0));
+        this.at(0).play();
       }
     });
   },  
@@ -13,7 +13,7 @@ var SongQueue = Songs.extend({
   enqueue: function (song) {
     this.push(song);
     if (this.length === 1) {
-      this.trigger('newSong', song);
+      song.play();
     }
   }
 });

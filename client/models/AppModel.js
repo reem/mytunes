@@ -10,8 +10,8 @@ var AppModel = Backbone.Model.extend({
       this.get('songQueue').enqueue(song);
     }, this);
 
-    this.get('songQueue').on('newSong', function (song) {
+    this.get('songQueue').on('play', function (song) {
       this.set('currentSong', song);
-    });
+    }, this);
   }
 });
